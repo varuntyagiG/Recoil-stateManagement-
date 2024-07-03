@@ -1,4 +1,4 @@
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { countAtom } from "../store/atoms/count";
 
 function Comp4() {
