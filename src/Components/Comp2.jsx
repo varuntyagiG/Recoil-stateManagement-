@@ -7,7 +7,9 @@ function Comp2() {
 
   return (
     <>
-      {count}
+      <p>
+        <b>Count :({count})</b>
+      </p>
       <Comp3 />
     </>
   );

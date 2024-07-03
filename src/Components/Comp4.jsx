@@ -1,17 +1,16 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import { countAtom } from "../store/atoms/count";
 
 function Comp4() {
-  let [count, setCount] = useRecoilState(countAtom);
+  let setCount = useSetRecoilState(countAtom);
 
   return (
     <>
-      <p>
-        Count : (<b>{count}</b>)
-      </p>
       <button
         onClick={() => {
-          setCount(count + 1);
+          setCount((c) => {
+            return c + 1;
+          });
         }}
         style={{
           backgroundColor: "red",
@@ -25,7 +24,9 @@ function Comp4() {
       &nbsp; &nbsp;
       <button
         onClick={() => {
-          setCount(count - 1);
+          setCount((c) => {
+            return c - 1;
+          });
         }}
         style={{
           backgroundColor: "grey",
